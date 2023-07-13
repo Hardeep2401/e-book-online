@@ -1,0 +1,104 @@
+<!-- home -->
+<section class="container-fluid my-5" id="homeProduct">
+  <div class="row g-2">
+    <!-- filter button -->
+    <div class="col-12 py-3">
+      <div class="filter float-end">
+        <select class="form-select shadow-sm small" [(ngModel)]="searchLanguage">
+          <option value="all">Sort by: language</option>
+          <option value="all">All</option>
+          <option value="English">English</option>
+          <option value="Hindi">Hindi</option>
+        </select>
+      </div>
+      <div class="filter float-end me-4">
+        <select class="form-select shadow-sm small" size="1" [(ngModel)]="searchBinding">
+          <option value="all">Sort by: Binding</option>
+          <option value="all">All</option>
+          <option value="Paperback">Paperback</option>
+          <option value="Kinder">Kinder Edition</option>
+          <option value="Hardcover">Hardcover</option>
+        </select>
+      </div>
+      <div class="filter float-end me-4">
+        <select class="form-select shadow-sm small" size="1" [(ngModel)]="searchPrice">
+          <option value="all">Sort by: Price</option>
+          <option value="all">All</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="150">150</option>
+          <option value="200">200</option>
+          <option value="300">300</option>
+          <option value="500">500</option>
+        </select>
+      </div>
+    </div>
+    <!-- /filter button -->
+    <div class="col-12 col-md-6 col-lg-3 e-book" *ngFor="
+        let product of productImg
+          | filter : searchLanguage : searchBinding : searchPrice
+      ">
+      <!-- card -->
+      <div class="card shadow-sm rounded-0 border-0 position-relative">
+        <img src="/assets/image/{{ product.image }}" class="img-fluid object-fit-fill border-bottom" alt="nature" />
+        <span class="position-absolute top-0 end-0 m-2 border rounded-5 p-1 bg-white shadow-sm pe-auto"
+          (click)="wishlistToggle($event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"  >
+            <path fill=""
+              d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z" />
+          </svg>
+        </span>
+
+        <div class="card-body">
+          <div class="card-title small fs-6 fw-semibold mb-0">
+            ${{ product.price }}
+          </div>
+          <h5 class="card-text text-capitalize">{{ product.name }}</h5>
+          <p class="card-text text-capitalize small m-0">
+            {{ product.author }}
+          </p>
+          <p class="card-text text-capitalize small m-0">
+            {{ product.binding }} , {{ product.language }}
+          </p>
+          <p class="star-rating mb-3">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" />
+              </svg>
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" />
+              </svg>
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" />
+              </svg>
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" />
+              </svg>
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" />
+              </svg>
+            </span>
+          </p>
+          <button class="btn btn-outline-primary w-100 rounded-0">
+            Buy now
+          </button>
+        </div>
+      </div>
+      <!-- /card -->
+    </div>
+  </div>
+</section>
+<!-- /home -->

@@ -1,0 +1,79 @@
+<section class="container-fluid" id="signIn">
+    <div class="row">
+        <div class="col-12 position-relative">
+            <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow"
+                *ngIf="display">
+                <div class="d-flex">
+                    <div class="p-2 small">
+                        Invalid credential. Please try again.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3"
+                        (click)="invalidClick()"></button>
+                </div>
+            </div>
+            <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow"
+                *ngIf="isUnDisplay">
+                <div class="d-flex">
+                    <div class="p-2 small">
+                        Something went wrong.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3"
+                        (click)="unDisplayClick()"></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 m-auto p-5 my-5">
+            <div class="card p-3 shadow-sm rounded-0 border-0">
+                <div class="card-header bg-white border-0">
+                    <h5 class="card-title text-center text-primary">E-Book Sign In</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Email Address
+                            </label>
+                            <input type="email" class="form-control shadow-sm rounded-0" placeholder="Email Address"
+                                formControlName="email">
+                            <span class="text-danger mt-1 small"
+                                *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">This
+                                is required field.</span>
+                            <span class="text-danger mt-1 small"
+                                *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">Invalid
+                                email address.</span>
+                        </div>
+                        <div class="mb-3 d-block">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label small text-muted">Password</label>
+                                <span class="mb-2">
+                                    <a href="#" class="text-primary small">Forgot Password?</a>
+                                </span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input class="form-control shadow-sm rounded-0" placeholder="********"
+                                    formControlName="password" [type]="fieldTextTypePassword ? 'text' : 'password'">
+                                <span class="input-group-text rounded-0">
+                                    <i class="fa" [ngClass]="{
+                                        'fa-eye-slash': !fieldTextTypePassword,
+                                        'fa-eye': fieldTextTypePassword
+                                      }" (click)="showPassword()"></i>
+                                </span>
+                            </div>
+                            <span class="text-danger mt-1 small"
+                                *ngIf="loginPassword && loginPassword.invalid && loginPassword.touched">This is
+                                required
+                                field.</span>
+                        </div>
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input shadow-sm rounded-0" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn bg-primary w-100 text-white rounded-0 shadow">Sign In</button>
+                    </form>
+                </div>
+                <div class="card-footer bg-white border-0 text-center py-0">
+                    <a class="text-center text-primary m-0 " [routerLink]="['/register']">I'm new user</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

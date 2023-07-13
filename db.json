@@ -1,0 +1,236 @@
+{
+  "admin": [
+    {
+      "email": "adming@gmail.com",
+      "password": "admin123",
+      "confirmPassword": "admin123",
+      "id": 1
+    }
+  ],
+  "user": [
+    {
+      "firstName": "Jhon",
+      "lastName": "Smith",
+      "city": "mohali",
+      "email": "adming@gmail.com",
+      "password": "admin123",
+      "confirmPassword": "admin123",
+      "id": 1
+    },
+    {
+      "firstName": "Hardeep",
+      "lastName": "Singh",
+      "city": "Chandigarh",
+      "email": "hs@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 2
+    },
+    {
+      "firstName": "Bunty",
+      "lastName": "Salaria",
+      "city": "Mohali",
+      "email": "buntysalaria@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 3
+    },
+    {
+      "firstName": "Aman",
+      "lastName": "Thakur",
+      "city": "Chandigarh",
+      "email": "aman@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 4
+    },
+    {
+      "firstName": "Rajeev",
+      "lastName": "Salaris",
+      "city": "Chandigarh",
+      "email": "rajeev@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 5
+    },
+    {
+      "firstName": "Kanchan",
+      "lastName": "Kaur",
+      "city": "Mohali",
+      "email": "kanchan@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 6
+    },
+    {
+      "firstName": "Sunil ",
+      "lastName": "Salaria",
+      "city": "Mohali",
+      "email": "ss@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 7
+    },
+    {
+      "firstName": "Vishu",
+      "lastName": "Thakur",
+      "city": "Mohali",
+      "email": "vt@gmail.com",
+      "password": "12",
+      "ConfirmPassword": "12",
+      "id": 8
+    },
+    {
+      "firstName": "Shivam",
+      "lastName": "Dutt",
+      "city": "Chandigarh",
+      "email": "sd@gmail.com",
+      "password": "123",
+      "ConfirmPassword": "123",
+      "id": 9
+    },
+    {
+      "firstName": "Ishaan",
+      "lastName": "Singh",
+      "city": "Jammu",
+      "email": "ishaan@gmail.com",
+      "password": "12",
+      "ConfirmPassword": "12",
+      "id": 10
+    },
+    {
+      "firstName": "Himanshu",
+      "lastName": "Singh",
+      "city": "UP",
+      "email": "himanshu@gmail.com",
+      "password": "123",
+      "ConfirmPassword": "123",
+      "id": 11
+    },
+    {
+      "firstName": "Chamn",
+      "lastName": "Singh",
+      "city": "HP",
+      "email": "chman@gmail.com",
+      "password": "123",
+      "ConfirmPassword": "123",
+      "id": 12
+    },
+    {
+      "firstName": "H",
+      "lastName": "Singh",
+      "city": "Mohali 5 Phase",
+      "email": "hardeepsingh@gmail.com",
+      "password": "1234",
+      "ConfirmPassword": "1234",
+      "id": 13
+    }
+  ],
+  "product": [
+    {
+      "name": "Simplicity",
+      "author": "gretchen stewart",
+      "binding": "Paperback",
+      "language": "English",
+      "price": "100",
+      "image": "simplicity.jpg",
+      "id": 2
+    },
+    {
+      "name": "Kilo",
+      "author": "Jon Lee Anderson",
+      "binding": "Kinder",
+      "language": "English",
+      "price": "150",
+      "image": "kilo.jpg",
+      "id": 3
+    },
+    {
+      "name": "PEW",
+      "author": "Catherine Lacey",
+      "binding": "Paperback",
+      "language": "English",
+      "price": "230",
+      "image": "pew.jpg",
+      "id": 4
+    },
+    {
+      "name": "Unwritten Rules of Life",
+      "author": "Sherry E",
+      "binding": "Paperback",
+      "language": "English",
+      "price": "52",
+      "image": "unwritten-rules-of-life.jpg",
+      "id": 5
+    },
+    {
+      "name": "Prisoner",
+      "author": "Arthur Miller",
+      "binding": "Paperback",
+      "language": "English",
+      "price": "120",
+      "image": "prisoner.jpg",
+      "id": 6
+    },
+    {
+      "name": "My Heart Bleeds",
+      "author": "Taylor ",
+      "binding": "Hardcover",
+      "language": "English",
+      "price": "150",
+      "image": "my-heart-bleeds-ink.jpg",
+      "id": 7
+    },
+    {
+      "name": "Pshycology Of Money",
+      "author": "Morgan Housle",
+      "binding": "Kinder",
+      "language": "English",
+      "price": "151",
+      "image": "phychology-of-money.jpg",
+      "id": 8
+    },
+    {
+      "name": "Millo Se Din",
+      "author": "Guljar",
+      "binding": "Hardcover",
+      "language": "Hindi",
+      "price": "200",
+      "image": "millo-se-din.jpg",
+      "id": 9
+    },
+    {
+      "name": "Forge Your Future",
+      "author": "APJB Kalam",
+      "binding": "Hardcover",
+      "language": "Hindi",
+      "price": "500",
+      "image": "forge-you-future.webp",
+      "id": 10
+    },
+    {
+      "name": "The Moral Infection",
+      "author": "Micheal ",
+      "binding": "Kinder",
+      "language": "English",
+      "price": "100",
+      "image": "the-moral-infection.jpg",
+      "id": 11
+    },
+    {
+      "name": "Mad Money",
+      "author": "Jeniffer",
+      "binding": "Paperback",
+      "language": "English",
+      "price": "350",
+      "image": "images.jpeg",
+      "id": 12
+    }
+  ],
+  "wishlist": [
+    {
+      "wishlistCount": true,
+      "id": 1
+    }
+  ]
+}

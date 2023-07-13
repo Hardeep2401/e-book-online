@@ -1,0 +1,113 @@
+<!-- upload product -->
+<section class="container-fluid mb-5">
+  <div class="row m-0">
+    <!-- submit message  -->
+    <div class="col-12 position-relative">
+      <div class="align-items-center text-bg-success border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow"
+        *ngIf="valueValid">
+        <div class="d-flex">
+          <div class="p-2 small">Sign Up Successfully</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3" (click)="uploadFile()"></button>
+        </div>
+      </div>
+      <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow"
+        *ngIf="valueInvalid">
+        <div class="d-flex">
+          <div class="p-2 small">Something went wrong</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3"
+            (click)="uploadInValidFile()"></button>
+        </div>
+      </div>
+    </div> 
+    <!-- /submit message  -->
+    <!-- upload Product form -->
+    <div class="col-md-3 m-auto my-5">
+      <div class="card p-3 shadow-sm rounded-0 border-0">
+        <div class="card-header bg-white border-0">
+          <h5 class="card-title text-center text-primary">Upload Product</h5>
+        </div>
+        <div class="card-body">
+          <!-- form -->
+          <form [formGroup]="uploadProduct" (ngSubmit)="onUpload()">
+            <div class="mb-3">
+              <label class="form-label small text-muted">Name<span class="text-danger">*</span></label>
+              <input type="text" class="form-control shadow-sm rounded-0 small" placeholder="Name" formControlName="name" />
+                <span class="text-danger mt-1 small" *ngIf="authorName && authorName.invalid && authorName.touched">This is required field.</span>
+              </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Author<span class="text-danger">*</span></label>
+              <input type="text" class="form-control shadow-sm rounded-0 small" placeholder="Author"
+                formControlName="author" />
+                <span class="text-danger mt-1 small" *ngIf="productAuthor && productAuthor.invalid && productAuthor.touched">This is required field.</span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Binding<span class="text-danger">*</span></label>
+                <select class="form-select shadow-sm rounded-0" size="1" formControlName="binding">
+                  <option value="Paperback">Paperback</option>
+                  <option value="Kinder">Kinder Edition</option>
+                  <option value="3">Hardcover</option>
+                </select>
+                <span class="text-danger mt-1 small" *ngIf="productBinding && productBinding.invalid && productBinding.touched">This is required field.</span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Language<span class="text-danger">*</span></label>
+                <select class="form-select shadow-sm rounded-0" size="1" formControlName="language">
+                  <option value="English" selected="">English</option>
+                  <option value="Hindi">Hindi</option>
+                </select>
+                <span class="text-danger mt-1 small" *ngIf="productLanguage && productLanguage.invalid && productLanguage.touched">This is required field.</span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Price<span class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text text-white bg-primary shadow-sm rounded-0" id="basic-addon1">$</span>
+                <input type="text" class="form-control rounded-0 small shadow-sm" placeholder="Price"
+                  formControlName="price">
+              </div>
+              <span class="text-danger mt-1 small" *ngIf="productPrice && productPrice.invalid && productPrice.touched">This is required field.</span>
+            </div>
+            <!-- image upload -->
+            <div class="border-bottom">
+              <div class="col-12 pb-2 m-0">
+                <label class="form-label small text-muted m-0">Upload Image<span class="text-danger">*</span></label>
+              </div>
+              <div class="col-12 fw-semibold m-0 py-2 border shadow-sm">
+                <div class="d-flex flex-column align-items-center justify-content-center py-4 position-relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+                    width="60px" height="60px" fill-rule="nonzero">
+                    <g fill="#2A338F" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                      stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                      font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                      style="mix-blend-mode: normal">
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M43.98828,23.54297c-0.23828,-5.85547 -5.07812,-10.54297 -10.98828,-10.54297c-1.01953,0 -1.99609,0.13281 -2.96484,0.40625c-2.23828,-3.35156 -6.01562,-5.40625 -10.03516,-5.40625c-6.41797,0 -11.67578,5.0625 -11.98437,11.40625c-4.69141,1.28906 -8.01562,5.62109 -8.01562,10.59375c0,6.06641 4.93359,11 11,11h30c4.96484,0 9,-4.03516 9,-9c0,-3.83203 -2.48437,-7.26562 -6.01172,-8.45703zM30.29297,26.70703l-4.29297,-4.29297v11.58594h-2v-11.58594l-4.29297,4.29297l-1.41406,-1.41406l6.70703,-6.70703l6.70703,6.70703z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg>
+                  <label class="small text-center">
+                    <span class="text-primary" >Upload Image</span></label>
+                  <input  type='file'  class="position-absolute w-100 h-100 opacity-0"  (change)="onSelectFile($event)" formControlName="image"/>
+                </div>
+              </div>
+              <span class="text-danger mt-1 small" *ngIf="uploadImage && uploadImage.invalid && uploadImage.touched">This is required field.</span>
+              <!-- upload image -->
+                <div class="d-flex justify-content-between mt-3 m-0 p-0 small"> 
+                  <p   class="p-0 mb-2">{{ImageName}}</p>
+                  <!-- <span class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896zm-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336L456.192 600.384z"/></svg></span> -->
+                </div>
+            </div>
+             <!-- /image upload -->
+            <button type="submit" class="btn bg-primary text-white w-100 rounded-0 shadow-sm mt-3">
+              Upload
+            </button>
+          </form>
+         <!-- /form -->
+        </div>
+      </div>
+    </div> 
+     <!-- / upload Product form  -->
+  </div>
+</section>
+<!-- upload product -->

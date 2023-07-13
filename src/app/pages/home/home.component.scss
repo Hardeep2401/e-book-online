@@ -1,0 +1,25 @@
+// home
+#homeProduct {
+  .filter {
+    width: 15%;
+  }
+  .e-book {
+    // width: 372px;
+    .card {
+      transition: transform 1s;
+
+      &:hover {
+        // transform: scale(1.02, 1.02);
+      }
+      img {
+        height: 350px !important;
+      }
+      .CardWishList {
+          fill: #f05fa3;
+      }
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+}

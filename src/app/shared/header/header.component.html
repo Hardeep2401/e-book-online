@@ -1,0 +1,46 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg bg-light shadow-sm">
+  <div class="container-fluid">
+    <!-- logo -->
+    <a class="navbar-brand fw-bold"><span class="text-secondary">E-</span><span class="text-primary">Book</span></a>
+     <!-- /logo -->
+    <!-- search bar -->
+    <div class="w-50 position-relative">
+      <span>
+        <input type="text" class="form-control rounded-0 shadow-sm" id="searchBar"
+         placeholder="Search books" [(ngModel)]="searchBox" (input)="searchData()" />
+      </span>
+      <span class="position-absolute top-0 end-0 me-3 pt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-secondary mt-1">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+            d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314Z" />
+        </svg>
+      </span>
+    </div>
+    <!-- /search bar -->
+    <!-- btn login & upload product -->
+    <div class="d-flex"> 
+      <div [routerLink]="['/login']" class=" align-self-center me-5 text-muted">
+        Login
+      </div>
+      <div class="align-self-center me-5">
+         <span class="me-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#F05FA3" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg>   
+        </span>
+         <span class="text-muted">Wishlist</span>
+         <span class="text-white bg-danger position-absolute top-0 end-o rounded-5 notification mt-1 small" > {{listData}}</span>
+              </div>
+      <button class="btn bg-primary shadow text-white rounded-0" [routerLink]="['/upload-product']"><span class="small">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="21" height="21" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m6.5 7.753l4-4.232l4 4.191m-4-4.212v11m-6 3h12"/></svg>
+        </span>
+        <span>Upload Product</span></span></button>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- /btn login & upload product -->
+  </div>
+</nav>
+<!-- /navbar -->
